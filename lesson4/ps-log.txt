@@ -1,0 +1,68 @@
+Script started on 2026-03-22 08:59:43+03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="222" LINES="39"]
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7mps aux [27mps aux 
+[?2004lUSER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.1  0.1  22284 12760 ?        Ss   08:43   0:01 /sbin/init
+root           2  0.0  0.0   3120  1920 ?        Sl   08:43   0:00 /init
+root           8  0.0  0.0   3136  1792 ?        Sl   08:43   0:00 plan9 --control-socket 7 --log-level 4 --server-fd 8 --pipe-fd 10 --log-truncate
+root          54  0.4  0.1  66744 14792 ?        S<s  08:43   0:03 /usr/lib/systemd/systemd-journald
+root         100  0.0  0.0  25236  6656 ?        Ss   08:43   0:00 /usr/lib/systemd/systemd-udevd
+root         115  0.0  0.0 152936  1412 ?        Ssl  08:43   0:00 snapfuse /var/lib/snapd/snaps/core20_2686.snap /snap/core20/2686 -o ro,nodev,allow_other,suid
+root         122  0.0  0.0 152936  1284 ?        Ssl  08:43   0:00 snapfuse /var/lib/snapd/snaps/snapd_25577.snap /snap/snapd/25577 -o ro,nodev,allow_other,suid
+root         126  0.1  0.1 526756 12068 ?        Ssl  08:43   0:01 snapfuse /var/lib/snapd/snaps/snapd_25935.snap /snap/snapd/25935 -o ro,nodev,allow_other,suid
+root         129  0.0  0.0 153068  1412 ?        Ssl  08:43   0:00 snapfuse /var/lib/snapd/snaps/svgo_155.snap /snap/svgo/155 -o ro,nodev,allow_other,suid
+systemd+     206  0.0  0.1  21452 12800 ?        Ss   08:43   0:00 /usr/lib/systemd/systemd-resolved
+systemd+     210  0.0  0.0  91020  7552 ?        Ssl  08:43   0:00 /usr/lib/systemd/systemd-timesyncd
+root         216  0.0  0.0   4236  2688 ?        Ss   08:43   0:00 /usr/sbin/cron -f -P
+message+     217  0.0  0.0   9696  4736 ?        Ss   08:43   0:00 @dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root         226  0.1  0.4 2219984 39228 ?       Ssl  08:43   0:01 /snap/snapd/current/usr/lib/snapd/snapd
+root         228  0.0  0.1  18184  8192 ?        Ss   08:43   0:00 /usr/lib/systemd/systemd-logind
+root         232  0.0  0.1 1756096 12032 ?       Ssl  08:43   0:00 /usr/libexec/wsl-pro-service -vv
+root         239  0.0  0.0   3160  1920 hvc0     Ss+  08:43   0:00 /sbin/agetty -o -p -- \u --noclear --keep-baud - 115200,38400,9600 vt220
+syslog       254  0.0  0.0 222508  5632 ?        Ssl  08:43   0:00 /usr/sbin/rsyslogd -n -iNONE
+root         257  0.0  0.0   3116  1792 tty1     Ss+  08:43   0:00 /sbin/agetty -o -p -- \u --noclear - linux
+root         263  0.0  0.2 107024 22400 ?        Ssl  08:43   0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
+root         394  0.0  0.0   3136   896 ?        Ss   08:43   0:00 /init
+root         395  0.0  0.0   3136  1288 ?        S    08:43   0:00 /init
+loitez       397  0.0  1.0  83036 82020 pts/0    Ss   08:43   0:00 -bash
+root         398  0.0  0.0   6816  4352 pts/1    Ss   08:43   0:00 /bin/login -f
+loitez       443  0.0  0.1  20376 11392 ?        Ss   08:43   0:00 /usr/lib/systemd/systemd --user
+loitez       445  0.0  0.0  21148  3516 ?        S    08:43   0:00 (sd-pam)
+loitez       469  0.0  1.0  83036 82016 pts/1    S+   08:43   0:00 -bash
+root        1123  0.0  0.0 152936  1412 ?        Ssl  08:43   0:00 snapfuse /var/lib/snapd/snaps/core20_2717.snap /snap/core20/2717 -o ro,nodev,allow_other,suid
+polkitd     1763  0.0  0.0 308164  7808 ?        Ssl  08:48   0:00 /usr/lib/polkit-1/polkitd --no-debug
+loitez      1779  0.0  1.0  83036 82144 pts/0    S    08:48   0:00 bash -l
+root        2136  0.0  0.0   3136   904 ?        Ss   08:50   0:00 /init
+root        2137  0.0  0.0   3136  1296 ?        S    08:50   0:00 /init
+loitez      2144  0.0  1.0  83036 82040 pts/2    Ss   08:50   0:00 -bash
+root        3138  0.0  0.1  12020  8064 ?        Ss   08:52   0:00 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+loitez      3171  0.0  0.1  12012  8192 pts/2    S+   08:53   0:00 ssh loitez@localhost
+root        3172  0.0  0.1  14964 10472 ?        Ss   08:53   0:00 sshd: loitez [priv]
+loitez      3219  0.0  0.0  15124  6964 ?        S    08:53   0:00 sshd: loitez@pts/3
+loitez      3220  0.0  1.0  83032 82024 pts/3    Ss+  08:53   0:00 -bash
+loitez      3570  0.0  0.0   3144  2048 pts/0    S+   08:59   0:00 script ps-log.txt
+loitez      3571  4.4  1.0  83036 82008 pts/4    Ss   08:59   0:00 bash -i
+loitez      3708  0.0  0.0   8280  4096 pts/4    R+   08:59   0:00 ps aux
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7mps -u $USER   [27mps -u $USER   
+[?2004l    PID TTY          TIME CMD
+    397 pts/0    00:00:00 bash
+    443 ?        00:00:00 systemd
+    445 ?        00:00:00 (sd-pam)
+    469 pts/1    00:00:00 bash
+   1779 pts/0    00:00:00 bash
+   2144 pts/2    00:00:00 bash
+   3171 pts/2    00:00:00 ssh
+   3219 ?        00:00:00 sshd
+   3220 pts/3    00:00:00 bash
+   3570 pts/0    00:00:00 script
+   3571 pts/4    00:00:00 bash
+   3711 pts/4    00:00:00 ps
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ top &
+[?2004l[1] 3714
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [?1l>[7mkill %1 [27mkill %1 
+[?2004l
+[1]+  Stopped                 top
+[?1l>
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ exit
+[?2004lexit
+
+Script done on 2026-03-22 09:00:15+03:00 [COMMAND_EXIT_CODE="0"]

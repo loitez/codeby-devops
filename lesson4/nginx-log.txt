@@ -1,0 +1,52 @@
+Script started on 2026-03-22 09:57:32+03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="222" LINES="19"]
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7msudo systemctl daemon-reload[27msudo systemctl daemon-reload
+[?2004l[sudo] password for loitez: 
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7msudo systemctl enable nginx-custom[27msudo systemctl enable nginx-custom
+[?2004l[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7msudo systemctl start nginx-custom[27msudo systemctl start nginx-custom
+[?2004l[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7msudo systemctl status nginx-custom[27msudo systemctl status nginx-custom
+[?2004l[?1h=[0;1;32m●[0m nginx-custom.service - Custom Nginx Service[m
+     Loaded: loaded (]8;;file://loitez/etc/systemd/system/nginx-custom.service/etc/systemd/system/nginx-custom.service]8;;; [0;1;32menabled[0m; preset: [0;1;32menabled[0m)[m
+     Active: [0;1;32mactive (running)[0m since Sun 2026-03-22 09:56:51 MSK; 57s ago[m
+   Main PID: 7037 (nginx)[m
+      Tasks: 17 (limit: 9285)[m
+     Memory: 11.7M (peak: 14.5M)[m
+        CPU: 39ms[m
+     CGroup: /system.slice/nginx-custom.service[m
+             ├─[0;38;5;245m7037 "nginx: master process /usr/sbin/nginx"[0m[m
+             ├─[0;38;5;245m7038 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7039 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7040 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7041 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7042 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7043 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7044 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7045 "nginx: worker process"[0m[m
+             ├─[0;38;5;245m7046 "nginx: worker process"[0m[m
+[7mlines 1-18[27m[K[K             ├─[0;38;5;245m7047 "nginx: worker process"[0m[m
+[7mlines 2-19[27m[K[K             ├─[0;38;5;245m7048 "nginx: worker process"[0m[m
+[7mlines 3-20[27m[K[K             ├─[0;38;5;245m7050 "nginx: worker process"[0m[m
+[7mlines 4-21[27m[K[K             ├─[0;38;5;245m7051 "nginx: worker process"[0m[m
+[7mlines 5-22[27m[K[K             ├─[0;38;5;245m7052 "nginx: worker process"[0m[m
+[7mlines 6-23[27m[K[K             ├─[0;38;5;245m7053 "nginx: worker process"[0m[m
+[7mlines 7-24[27m[K[K             └─[0;38;5;245m7054 "nginx: worker process"[0m[m
+[7mlines 8-25[27m[K[K[m
+[7mlines 9-26[27m[K[KMar 22 09:56:51 loitez systemd[1]: Starting nginx-custom.service - Custom Nginx Service...[m
+[7mlines 10-27[27m[K[KMar 22 09:56:51 loitez nginx[7034]: nginx: the configuration file /etc/nginx/nginx.conf syntax is ok[m
+[7mlines 11-28[27m[K[KMar 22 09:56:51 loitez nginx[7034]: nginx: configuration file /etc/nginx/nginx.conf test is successful[m
+[7mlines 12-29[27m[K[KMar 22 09:56:51 loitez systemd[1]: Started nginx-custom.service - Custom Nginx Service.[m
+[7mlines 13-30[27m[K[K[K[7mlines 13-30/30 (END)[27m[K[K[K[7mlines 13-30/30 (END)[27m[K
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7mcurl -I http://localhost[27mcurl -I http://localhost
+[?2004lHTTP/1.1 200 OK
+[1mServer[0m: nginx/1.24.0 (Ubuntu)
+[1mDate[0m: Sun, 22 Mar 2026 06:57:49 GMT
+[1mContent-Type[0m: text/html
+[1mContent-Length[0m: 615
+[1mLast-Modified[0m: Sun, 22 Mar 2026 06:50:53 GMT
+[1mConnection[0m: keep-alive
+[1mETag[0m: "69bf914d-267"
+[1mAccept-Ranges[0m: bytes
+
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ exit
+[?2004lexit
+
+Script done on 2026-03-22 09:57:51+03:00 [COMMAND_EXIT_CODE="0"]
