@@ -1,0 +1,40 @@
+Script started on 2026-03-22 09:48:59+03:00 [TERM="xterm-256color" TTY="/dev/pts/4" COLUMNS="222" LINES="30"]
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ java -version
+[?2004lopenjdk version "11.0.30" 2026-01-20
+OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu124.04)
+OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu124.04, mixed mode, sharing)
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ [7msudo update-alternatives --config java[27msudo update-alternatives --config java
+[?2004l[sudo] password for loitez: 
+There are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+* 0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
+  1            /opt/jdk-26/bin/java                          200       manual mode
+  2            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 1
+update-alternatives: using /opt/jdk-26/bin/java to provide /usr/bin/java (java) in manual mode
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ java -version
+[?2004ljava version "26" 2026-03-17
+Java(TM) SE Runtime Environment (build 26+35-2893)
+Java HotSpot(TM) 64-Bit Server VM (build 26+35-2893, mixed mode, sharing)
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ java -versionsudo update-alternatives --config java
+[?2004lThere are 2 choices for the alternative java (providing /usr/bin/java).
+
+  Selection    Path                                         Priority   Status
+------------------------------------------------------------
+  0            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      auto mode
+* 1            /opt/jdk-26/bin/java                          200       manual mode
+  2            /usr/lib/jvm/java-11-openjdk-amd64/bin/java   1111      manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 0
+update-alternatives: using /usr/lib/jvm/java-11-openjdk-amd64/bin/java to provide /usr/bin/java (java) in auto mode
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ java -version
+[?2004lopenjdk version "11.0.30" 2026-01-20
+OpenJDK Runtime Environment (build 11.0.30+7-post-Ubuntu-1ubuntu124.04)
+OpenJDK 64-Bit Server VM (build 11.0.30+7-post-Ubuntu-1ubuntu124.04, mixed mode, sharing)
+[?2004h]0;loitez@loitez: /mnt/g/.devops/codeby-devops[01;32mloitez@loitez[00m:[01;34m/mnt/g/.devops/codeby-devops[00m$ exit
+[?2004lexit
+
+Script done on 2026-03-22 09:49:56+03:00 [COMMAND_EXIT_CODE="0"]
