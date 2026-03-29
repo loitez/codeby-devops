@@ -1,0 +1,23 @@
+# Vagrantfile
+Vagrant.configure("2") do |config|
+  config.vm.box = "ubuntu/jammy64"
+
+  config.vm.boot_timeout = 600
+  config.ssh.insert_key = false
+
+  # Server VM
+  config.vm.define "server" do |server|
+    server.vm.hostname = "server"
+    server.vm.network :private_network, ip: "192.168.56.10"
+
+    server.vm.provision "shell", path: "scripts/server-provision.sh"
+  end
+
+  # Client VM
+  config.vm.define "client" do |client|
+    client.vm.hostname = "client"
+    client.vm.network :private_network, ip: "192.168.56.11"
+
+    client.vm.provision "shell", path: "scripts/client-provision.sh"
+  end
+end
