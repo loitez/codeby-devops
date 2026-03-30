@@ -1,0 +1,33 @@
+---
+- name: Configure Web Server
+  hosts: webservers
+  gather_facts: true
+
+  tasks:
+    - name: Display environment information
+      ansible.builtin.debug:
+        msg: "This host is in {{ environment_name }} environment"
+
+    - name: Install required packages
+      ansible.builtin.apt:
+        name:
+          - wget
+          - htop
+          - nginx
+        state: present
+        update_cache: yes
+
+    - name: Start and enable Nginx service
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Verify Nginx is running
+      ansible.builtin.command: systemctl is-active nginx
+      register: nginx_status
+      changed_when: false
+
+    - name: Display Nginx status
+      ansible.builtin.debug:
+        msg: "Nginx service status: {{ nginx_status.stdout }}"
