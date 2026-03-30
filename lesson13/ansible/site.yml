@@ -1,0 +1,13 @@
+---
+- name: Deploy Database Server
+  hosts: dbservers
+  become: true
+  roles:
+    - mysql
+
+- name: Deploy Web Server and WordPress
+  hosts: webservers
+  become: true
+  roles:
+    - apache
+    - wordpress

@@ -1,0 +1,37 @@
+---
+# Переменные по умолчанию для Apache
+apache_packages:
+  Debian:
+    - apache2
+    - libapache2-mod-php
+    - php
+    - php-mysql
+    - php-curl
+    - php-gd
+    - php-mbstring
+    - php-xml
+    - php-xmlrpc
+    - php-soap
+    - php-intl
+    - php-zip
+  RedHat:
+    - httpd
+    - mod_ssl
+    - php
+    - php-mysqlnd
+    - php-curl
+    - php-gd
+    - php-mbstring
+    - php-xml
+    - php-xmlrpc
+    - php-soap
+    - php-intl
+    - php-zip
+
+apache_service:
+  Debian: apache2
+  RedHat: httpd
+
+apache_document_root: "/var/www/html"
+apache_server_name: "localhost"
+apache_admin_email: "admin@localhost"

@@ -1,0 +1,48 @@
+---
+- name: Install Apache and PHP packages
+  ansible.builtin.package:
+    name: "{{ apache_packages[ansible_os_family] }}"
+    state: present
+
+- name: Start and enable Apache service
+  ansible.builtin.service:
+    name: "{{ apache_service[ansible_os_family] }}"
+    state: started
+    enabled: true
+
+- name: Create Document Root
+  ansible.builtin.file:
+    path: /var/www/html
+    state: directory
+    owner: "{{ 'apache' if ansible_os_family == 'RedHat' else 'www-data' }}"
+    group: "{{ 'apache' if ansible_os_family == 'RedHat' else 'www-data' }}"
+    mode: '0755'
+
+# === ДОБАВЬТЕ ЭТИ ЗАДАЧИ ===
+- name: Remove default Apache index.html
+  ansible.builtin.file:
+    path: /var/www/html/index.html
+    state: absent
+
+- name: Disable default Apache site (Debian/Ubuntu)
+  ansible.builtin.command: a2dissite 000-default.conf
+  become: true
+  when: ansible_os_family == "Debian"
+  notify: Restart Apache
+  changed_when: false
+  ignore_errors: true
+# ==============================
+
+- name: Deploy VirtualHost config
+  ansible.builtin.template:
+    src: vhost.conf.j2
+    dest: "{{ '/etc/httpd/conf.d/wordpress.conf' if ansible_os_family == 'RedHat' else '/etc/apache2/sites-available/wordpress.conf' }}"
+  notify: Restart Apache
+
+- name: Enable Site (Debian only)
+  ansible.builtin.command: a2ensite wordpress.conf
+  become: true
+  when: ansible_os_family == "Debian"
+  notify: Restart Apache
+  changed_when: false
+  ignore_errors: true
