@@ -1,0 +1,25 @@
+Vagrant.configure("2") do |config|
+  # Общие настройки для всех ВМ
+  config.vm.box = "ubuntu/jammy64"
+  config.vm.synced_folder ".", "/vagrant", disabled: false
+
+  # Настройки для dev окружения
+  config.vm.define "dev" do |dev|
+    dev.vm.hostname = "dev-server"
+    dev.vm.network "private_network", ip: "192.168.56.10"
+    dev.vm.provider "virtualbox" do |vb|
+      vb.memory = "1024"
+      vb.cpus = 1
+    end
+  end
+
+  # Настройки для prod окружения
+  config.vm.define "prod" do |prod|
+    prod.vm.hostname = "prod-server"
+    prod.vm.network "private_network", ip: "192.168.56.11"
+    prod.vm.provider "virtualbox" do |vb|
+      vb.memory = "1024"
+      vb.cpus = 1
+    end
+  end
+end

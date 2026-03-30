@@ -1,0 +1,5 @@
+[webservers]
+dev-server ansible_host=192.168.56.10 ansible_user=vagrant ansible_private_key_file=/home/loitez/.ssh/vagrant_keys/dev_key
+
+[webservers:vars]
+environment_name=dev
