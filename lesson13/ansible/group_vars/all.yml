@@ -1,0 +1,6 @@
+---
+# Database credentials (доступно всем хостам)
+wp_db_name: wordpress_db
+wp_db_user: wordpress_user
+wp_db_password: "StrongPassword123!"
+wp_db_host: 192.168.56.11

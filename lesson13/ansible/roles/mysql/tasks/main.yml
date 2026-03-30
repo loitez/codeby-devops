@@ -1,0 +1,43 @@
+---
+- name: Install MySQL packages
+  ansible.builtin.package:
+    name: "{{ mysql_packages[ansible_os_family] }}"
+    state: present
+
+- name: Start and enable MySQL service
+  ansible.builtin.service:
+    name: "{{ mysql_service[ansible_os_family] }}"
+    state: started
+    enabled: true
+
+- name: Configure MySQL to listen on all interfaces
+  ansible.builtin.lineinfile:
+    path: /etc/mysql/mysql.conf.d/mysqld.cnf
+    regexp: '^bind-address'
+    line: 'bind-address = 0.0.0.0'
+    state: present
+  become: true
+  notify: Restart MySQL
+
+- name: Wait for MySQL socket to be available
+  ansible.builtin.wait_for:
+    path: /var/run/mysqld/mysqld.sock
+    timeout: 60
+  become: true
+
+- name: Create WordPress Database
+  community.mysql.mysql_db:
+    name: "{{ wp_db_name }}"
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+  become: true
+
+- name: Create WordPress DB User
+  community.mysql.mysql_user:
+    name: "{{ wp_db_user }}"
+    password: "{{ wp_db_password }}"
+    priv: "{{ wp_db_name }}.*:ALL"
+    host: "%"
+    state: present
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+  become: true

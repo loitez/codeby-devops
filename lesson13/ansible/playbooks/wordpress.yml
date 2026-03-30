@@ -1,0 +1,32 @@
+---
+- name: Deploy WordPress Infrastructure
+  hosts: wordpress
+  gather_facts: true
+
+  pre_tasks:
+    - name: Update apt cache (Debian/Ubuntu)
+      ansible.builtin.apt:
+        update_cache: yes
+        cache_valid_time: 3600
+      when: ansible_os_family == "Debian"
+
+    - name: Update yum cache (CentOS/RHEL)
+      ansible.builtin.yum:
+        update_cache: yes
+      when: ansible_os_family == "RedHat"
+
+  roles:
+    - role: mysql
+      tags: ['database', 'mysql']
+
+    - role: apache
+      tags: ['webserver', 'apache']
+
+  post_tasks:
+    - name: Display deployment summary
+      ansible.builtin.debug:
+        msg: |
+          WordPress infrastructure deployed successfully!
+          - Database: {{ mysql_database }}
+          - Web Server: {{ apache_service[ansible_os_family] }}
+          - OS: {{ ansible_distribution }} {{ ansible_distribution_version }}

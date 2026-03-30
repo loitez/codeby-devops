@@ -1,0 +1,8 @@
+---
+mysql_packages:
+  RedHat: [mariadb-server, mariadb, python3-PyMySQL]
+  Debian: [mysql-server, python3-pymysql]
+
+mysql_service:
+  RedHat: mariadb
+  Debian: mysql
