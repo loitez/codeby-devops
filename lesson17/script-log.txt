@@ -1,0 +1,551 @@
+Script started on 2026-04-02 17:32:01+03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="161" LINES="25"]
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker network create --driver bridge wp-net[27mdocker network create --driver bridge wp-net
+[?2004l41395ad6bb4c54dc9c9e1bf386b0245857033701aa7bd063b30e16806a16d250
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker volume create wp-db[27mdocker volume create wp-db
+[?2004lwp-db
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker volume create wp-data[27mdocker volume create wp-data
+[?2004lwp-data
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker network ls | grep wp-net[27mdocker network ls | grep wp-net
+[?2004l41395ad6bb4c   [01;31m[Kwp-net[m[K                bridge    local
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker volume ls | grep wp-[27mdocker volume ls | grep wp-
+[?2004llocal     [01;31m[Kwp-[m[Kdata
+local     [01;31m[Kwp-[m[Kdb
+local     [01;31m[Kwp-[m[Kvolume
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker-compose up -d[27mdocker-compose up -d
+[?2004l[33mWARN[0m[0000] /mnt/g/.devops/codeby-devops/vm/lesson17/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[1A[1B[0G[?25l[+] Running 0/1
+ [33m⠋[0m Container wp-mysql  Creating                                                                                                                             [34m0.1s [0m
+[?25h[1A[1A[0G[?25l[34m[+] Running 1/2[0m
+ [32m✔[0m Container wp-mysql      [32mCreated[0m                                                                                                                          [34m0.2s [0m
+ [33m⠋[0m Container wp-wordpress  Creating                                                                                                                         [34m0.0s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container wp-mysql      [32mCreated[0m                                                                                                                          [34m0.2s [0m
+ [33m⠙[0m Container wp-wordpress  Creating                                                                                                                         [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Starting                                                                                                                         [34m0.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Starting                                                                                                                         [34m0.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Starting                                                                                                                         [34m0.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Starting                                                                                                                         [34m0.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m0.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m0.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m1.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m1.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m1.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m1.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m1.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m1.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m1.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m1.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m1.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m1.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m2.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m2.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m2.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m2.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m2.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m2.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m2.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m2.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m2.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m2.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m3.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m3.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m3.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m3.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m3.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m3.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m3.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m3.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m3.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m3.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m4.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m4.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m4.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m4.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m4.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m4.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m4.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m4.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m4.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m4.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m5.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m5.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m5.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m5.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m5.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m5.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m5.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m5.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m5.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m5.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m6.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m6.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m6.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m6.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m6.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m6.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m6.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m6.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m6.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m6.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m7.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m7.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m7.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m7.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m7.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m7.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m7.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m7.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m7.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m7.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m8.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m8.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m8.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m8.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m8.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m8.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m8.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m8.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m8.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m8.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                          [34m9.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                          [34m9.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                          [34m9.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                          [34m9.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                          [34m9.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                          [34m9.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                          [34m9.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                          [34m9.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                          [34m9.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                          [34m9.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                         [34m10.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                         [34m10.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                         [34m10.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                         [34m10.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠙[0m Container wp-mysql      Waiting                                                                                                                         [34m10.4s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠹[0m Container wp-mysql      Waiting                                                                                                                         [34m10.5s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠸[0m Container wp-mysql      Waiting                                                                                                                         [34m10.6s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠼[0m Container wp-mysql      Waiting                                                                                                                         [34m10.7s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠴[0m Container wp-mysql      Waiting                                                                                                                         [34m10.8s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠦[0m Container wp-mysql      Waiting                                                                                                                         [34m10.9s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠧[0m Container wp-mysql      Waiting                                                                                                                         [34m11.0s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠇[0m Container wp-mysql      Waiting                                                                                                                         [34m11.1s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠏[0m Container wp-mysql      Waiting                                                                                                                         [34m11.2s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [33m⠋[0m Container wp-mysql      Waiting                                                                                                                         [34m11.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mCreated[0m                                                                                                                          [34m0.1s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container wp-mysql      [32mHealthy[0m                                                                                                                         [34m11.3s [0m
+ [33m⠹[0m Container wp-wordpress  Starting                                                                                                                        [34m11.2s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container wp-mysql      [32mHealthy[0m                                                                                                                         [34m11.3s [0m
+ [33m⠸[0m Container wp-wordpress  Starting                                                                                                                        [34m11.3s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container wp-mysql      [32mHealthy[0m                                                                                                                         [34m11.3s [0m
+ [33m⠼[0m Container wp-wordpress  Starting                                                                                                                        [34m11.4s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container wp-mysql      [32mHealthy[0m                                                                                                                         [34m11.3s [0m
+ [33m⠴[0m Container wp-wordpress  Starting                                                                                                                        [34m11.5s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container wp-mysql      [32mHealthy[0m                                                                                                                         [34m11.3s [0m
+ [33m⠦[0m Container wp-wordpress  Starting                                                                                                                        [34m11.6s [0m
+[?25h[1A[1A[1A[0G[?25l[+] Running 1/2
+ [32m✔[0m Container wp-mysql      [32mHealthy[0m                                                                                                                         [34m11.3s [0m
+ [33m⠧[0m Container wp-wordpress  Starting                                                                                                                        [34m11.7s [0m
+[?25h[1A[1A[1A[0G[?25l[34m[+] Running 2/2[0m
+ [32m✔[0m Container wp-mysql      [32mHealthy[0m                                                                                                                         [34m11.3s [0m
+ [32m✔[0m Container wp-wordpress  [32mStarted[0m                                                                                                                         [34m11.8s [0m
+[?25h[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker-compose ps[27mdocker-compose ps
+[?2004l[33mWARN[0m[0000] /mnt/g/.devops/codeby-devops/vm/lesson17/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+NAME           IMAGE              COMMAND                  SERVICE     CREATED          STATUS                    PORTS
+wp-mysql       mysql:8.0          "docker-entrypoint.s…"   db          21 seconds ago   Up 20 seconds (healthy)   3306/tcp, 33060/tcp
+wp-wordpress   wordpress:latest   "docker-entrypoint.s…"   wordpress   21 seconds ago   Up 10 seconds             0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker-compose logs db[27mdocker-compose logs db
+[?2004l[33mWARN[0m[0000] /mnt/g/.devops/codeby-devops/vm/lesson17/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[36mwp-mysql  | [0m2026-04-02 14:32:20+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+[36mwp-mysql  | [0m2026-04-02 14:32:20+00:00 [Note] [Entrypoint]: Switching to dedicated user 'mysql'
+[36mwp-mysql  | [0m2026-04-02 14:32:20+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.45-1.el9 started.
+[36mwp-mysql  | [0m2026-04-02 14:32:20+00:00 [Note] [Entrypoint]: Initializing database files
+[36mwp-mysql  | [0m2026-04-02T14:32:20.578839Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+[36mwp-mysql  | [0m2026-04-02T14:32:20.579231Z 0 [System] [MY-013169] [Server] /usr/sbin/mysqld (mysqld 8.0.45) initializing of server in progress as process 80
+[36mwp-mysql  | [0m2026-04-02T14:32:20.593399Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+[36mwp-mysql  | [0m2026-04-02T14:32:21.406266Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+[36mwp-mysql  | [0m2026-04-02T14:32:23.674003Z 6 [Warning] [MY-010453] [Server] root@localhost is created with an empty password ! Please consider switching off the --initialize-insecure option.
+[36mwp-mysql  | [0m2026-04-02 14:32:27+00:00 [Note] [Entrypoint]: Database files initialized
+[36mwp-mysql  | [0m2026-04-02 14:32:27+00:00 [Note] [Entrypoint]: Starting temporary server
+[36mwp-mysql  | [0m2026-04-02T14:32:27.955809Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+[36mwp-mysql  | [0m2026-04-02T14:32:27.959251Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.45) starting as process 124
+[36mwp-mysql  | [0m2026-04-02T14:32:27.977592Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+[36mwp-mysql  | [0m2026-04-02T14:32:28.278558Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+[36mwp-mysql  | [0m2026-04-02T14:32:28.634666Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+[36mwp-mysql  | [0m2026-04-02T14:32:28.634765Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+[36mwp-mysql  | [0m2026-04-02T14:32:28.640397Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+[36mwp-mysql  | [0m2026-04-02T14:32:28.678292Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Socket: /var/run/mysqld/mysqlx.sock
+[36mwp-mysql  | [0m2026-04-02T14:32:28.678425Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.45'  socket: '/var/run/mysqld/mysqld.sock'  port: 0  MySQL Community Server - GPL.
+[36mwp-mysql  | [0m2026-04-02 14:32:28+00:00 [Note] [Entrypoint]: Temporary server started.
+[36mwp-mysql  | [0m'/var/lib/mysql/mysql.sock' -> '/var/run/mysqld/mysqld.sock'
+[36mwp-mysql  | [0mWarning: Unable to load '/usr/share/zoneinfo/iso3166.tab' as time zone. Skipping it.
+[36mwp-mysql  | [0mWarning: Unable to load '/usr/share/zoneinfo/leap-seconds.list' as time zone. Skipping it.
+[36mwp-mysql  | [0mWarning: Unable to load '/usr/share/zoneinfo/leapseconds' as time zone. Skipping it.
+[36mwp-mysql  | [0mWarning: Unable to load '/usr/share/zoneinfo/tzdata.zi' as time zone. Skipping it.
+[36mwp-mysql  | [0mWarning: Unable to load '/usr/share/zoneinfo/zone.tab' as time zone. Skipping it.
+[36mwp-mysql  | [0mWarning: Unable to load '/usr/share/zoneinfo/zone1970.tab' as time zone. Skipping it.
+[36mwp-mysql  | [0m2026-04-02 14:32:35+00:00 [Note] [Entrypoint]: Creating database wordpress
+[36mwp-mysql  | [0m2026-04-02 14:32:35+00:00 [Note] [Entrypoint]: Creating user wpuser
+[36mwp-mysql  | [0m2026-04-02 14:32:35+00:00 [Note] [Entrypoint]: Giving user wpuser access to schema wordpress
+[36mwp-mysql  | [0m
+[36mwp-mysql  | [0m2026-04-02 14:32:35+00:00 [Note] [Entrypoint]: Stopping temporary server
+[36mwp-mysql  | [0m2026-04-02T14:32:35.195190Z 14 [System] [MY-013172] [Server] Received SHUTDOWN from user root. Shutting down mysqld (Version: 8.0.45).
+[36mwp-mysql  | [0m2026-04-02T14:32:37.039889Z 0 [System] [MY-010910] [Server] /usr/sbin/mysqld: Shutdown complete (mysqld 8.0.45)  MySQL Community Server - GPL.
+[36mwp-mysql  | [0m2026-04-02 14:32:37+00:00 [Note] [Entrypoint]: Temporary server stopped
+[36mwp-mysql  | [0m
+[36mwp-mysql  | [0m2026-04-02 14:32:37+00:00 [Note] [Entrypoint]: MySQL init process done. Ready for start up.
+[36mwp-mysql  | [0m
+[36mwp-mysql  | [0m2026-04-02T14:32:37.701798Z 0 [Warning] [MY-011068] [Server] The syntax '--skip-host-cache' is deprecated and will be removed in a future release. Please use SET GLOBAL host_cache_size=0 instead.
+[36mwp-mysql  | [0m2026-04-02T14:32:37.705958Z 0 [System] [MY-010116] [Server] /usr/sbin/mysqld (mysqld 8.0.45) starting as process 1
+[36mwp-mysql  | [0m2026-04-02T14:32:37.722806Z 1 [System] [MY-013576] [InnoDB] InnoDB initialization has started.
+[36mwp-mysql  | [0m2026-04-02T14:32:38.323299Z 1 [System] [MY-013577] [InnoDB] InnoDB initialization has ended.
+[36mwp-mysql  | [0m2026-04-02T14:32:45.897599Z 0 [Warning] [MY-010068] [Server] CA certificate ca.pem is self signed.
+[36mwp-mysql  | [0m2026-04-02T14:32:45.897600Z 0 [System] [MY-013602] [Server] Channel mysql_main configured to support TLS. Encrypted connections are now supported for this channel.
+[36mwp-mysql  | [0m2026-04-02T14:32:45.897607Z 0 [Warning] [MY-011810] [Server] Insecure configuration for --pid-file: Location '/var/run/mysqld' in the path is accessible to all OS users. Consider choosing a different directory.
+[36mwp-mysql  | [0m2026-04-02T14:32:45.897612Z 0 [System] [MY-011323] [Server] X Plugin ready for connections. Bind-address: '::' port: 33060, socket: /var/run/mysqld/mysqlx.sock
+[36mwp-mysql  | [0m2026-04-02T14:32:45.897613Z 0 [System] [MY-010931] [Server] /usr/sbin/mysqld: ready for connections. Version: '8.0.45'  socket: '/var/run/mysqld/mysqld.sock'  port: 3306  MySQL Community Server - GPL.
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker-compose logs wordpress[27mdocker-compose logs wordpress
+[?2004l[33mWARN[0m[0000] /mnt/g/.devops/codeby-devops/vm/lesson17/docker-compose.yml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+[36mwp-wordpress  | [0mWordPress not found in /var/www/html - copying now...
+[36mwp-wordpress  | [0mComplete! WordPress has been successfully copied to /var/www/html
+[36mwp-wordpress  | [0mNo 'wp-config.php' found in /var/www/html, but 'WORDPRESS_...' variables supplied; copying 'wp-config-docker.php' (WORDPRESS_DB_HOST WORDPRESS_DB_NAME WORDPRESS_DB_PASSWORD WORDPRESS_DB_USER)
+[36mwp-wordpress  | [0mAH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[36mwp-wordpress  | [0mAH00558: apache2: Could not reliably determine the server's fully qualified domain name, using 172.19.0.3. Set the 'ServerName' directive globally to suppress this message
+[36mwp-wordpress  | [0m[Thu Apr 02 14:32:32.138375 2026] [mpm_prefork:notice] [pid 1:tid 1] AH00163: Apache/2.4.66 (Debian) PHP/8.3.30 configured -- resuming normal operations
+[36mwp-wordpress  | [0m[Thu Apr 02 14:32:32.138647 2026] [core:notice] [pid 1:tid 1] AH00094: Command line: 'apache2 -D FOREGROUND'
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker network inspect wp-net[27mdocker network inspect wp-net
+[?2004l[
+    {
+        "Name": "wp-net",
+        "Id": "41395ad6bb4c54dc9c9e1bf386b0245857033701aa7bd063b30e16806a16d250",
+        "Created": "2026-04-02T14:32:04.247806797Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": {},
+            "Config": [
+                {
+                    "Subnet": "172.19.0.0/16",
+                    "IPRange": "",
+                    "Gateway": "172.19.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {
+            "com.docker.network.enable_ipv4": "true",
+            "com.docker.network.enable_ipv6": "false"
+        },
+        "Labels": {},
+        "Containers": {
+            "6cfcefcd371386423d018b8337373938c28954436bd24e2f045c927fdf9c3cc0": {
+                "Name": "wp-wordpress",
+                "EndpointID": "445c640e3b4394a4de9ab24e1fc55953faf887d6f4a594c0d445d363d4eceedf",
+                "MacAddress": "1e:32:a1:22:68:f8",
+                "IPv4Address": "172.19.0.3/16",
+                "IPv6Address": ""
+            },
+            "75135b1bb71122f58234d030acbd1c884999fb9d67148922b910f8d83dca1c60": {
+                "Name": "wp-mysql",
+                "EndpointID": "54d26af3ef677da73c37e51185b45ff6777a77884d109a04afeae19f2098ca2d",
+                "MacAddress": "3e:ca:92:54:45:ae",
+                "IPv4Address": "172.19.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.19.0.0/16": {
+                        "IPsInUse": 5,
+                        "DynamicIPsAvailable": 65531
+                    }
+                }
+            }
+        }
+    }
+]
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker volume inspect wp-db[27mdocker volume inspect wp-db
+[?2004l[
+    {
+        "CreatedAt": "2026-04-02T14:32:07Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/wp-db/_data",
+        "Name": "wp-db",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker volume inspect wp-data[27mdocker volume inspect wp-data
+[?2004l[
+    {
+        "CreatedAt": "2026-04-02T14:32:10Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/wp-data/_data",
+        "Name": "wp-data",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mdocker exec wp-wordpress cat /etc/apache2/sites-available/000-default.conf[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cdocker exec wp-wordpress cat /etc/apache2/sites-available/000-default.conf
+[?2004l<VirtualHost *:80>
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/html
+
+    <Directory /var/www/html>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# [7mcurl -I http://localhost:8080[27mcurl -I http://localhost:8080
+[?2004lHTTP/1.1 302 Found
+[1mDate[0m: Thu, 02 Apr 2026 14:38:05 GMT
+[1mServer[0m: Apache/2.4.66 (Debian)
+[1mX-Powered-By[0m: PHP/8.3.30
+[1mExpires[0m: Wed, 11 Jan 1984 05:00:00 GMT
+[1mCache-Control[0m: no-cache, must-revalidate, max-age=0, no-store, private
+[1mX-Redirect-By[0m: WordPress
+[1mLocation[0m: ]8;;http://localhost:8080/wp-admin/install.php\http://localhost:8080/wp-admin/install.php
+]8;;\[1mContent-Type[0m: text/html; charset=UTF-8
+
+[?2004h]0;root@DESKTOP-ENND9S6: /mnt/g/.devops/codeby-devops/vm/lesson17root@DESKTOP-ENND9S6:/mnt/g/.devops/codeby-devops/vm/lesson17# учше[K[K[K[Kexit
+[?2004lexit
+
+Script done on 2026-04-02 17:38:14+03:00 [COMMAND_EXIT_CODE="0"]
