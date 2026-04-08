@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "wordpress-stack.fullname" . }}-wp-config
+  labels:
+    {{- include "wordpress-stack.labels" . | nindent 4 }}
+data:
+  WORDPRESS_DB_HOST: {{ printf "%s-mysql:%d" (include "wordpress-stack.fullname" .) .Values.mysql.service.port }}
+  WORDPRESS_DB_NAME: {{ .Values.mysql.credentials.database | quote }}
+  WORDPRESS_DB_USER: {{ .Values.mysql.credentials.user | quote }}

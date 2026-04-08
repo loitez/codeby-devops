@@ -1,0 +1,60 @@
+global:
+  namespace: default
+
+mysql:
+  enabled: true
+  image:
+    repository: mysql
+    tag: "5.7"
+    pullPolicy: IfNotPresent
+  replicas: 1
+  storage:
+    className: "local-storage"
+    size: "5Gi"
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "256Mi"
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+  credentials:
+    rootPassword: "change-me-root"
+    database: "wordpress"
+    user: "wp_user"
+    password: "change-me-wp"
+  service:
+    port: 3306
+    type: ClusterIP
+
+wordpress:
+  enabled: true
+  image:
+    repository: wordpress
+    tag: "6.5-php8.2-apache"
+    pullPolicy: IfNotPresent
+  replicas: 1
+  storage:
+    className: "local-storage"
+    size: "5Gi"
+  resources:
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+    limits:
+      cpu: "250m"
+      memory: "256Mi"
+  hpa:
+    enabled: true
+    minReplicas: 1
+    maxReplicas: 5
+    targetCPUUtilization: 50
+  ingress:
+    enabled: true
+    host: "wordpress.local"
+    className: "nginx"
+    tls: []
+    annotations: {}
+  service:
+    port: 80
+    type: ClusterIP

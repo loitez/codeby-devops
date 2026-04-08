@@ -1,0 +1,17 @@
+{{- if .Values.wordpress.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "wordpress-stack.fullname" . }}-wordpress
+  labels:
+    {{- include "wordpress-stack.wordpressLabels" . | nindent 4 }}
+spec:
+  type: {{ .Values.wordpress.service.type }}
+  ports:
+    - port: {{ .Values.wordpress.service.port }}
+      targetPort: http
+      protocol: TCP
+      name: http
+  selector:
+    {{- include "wordpress-stack.wordpressLabels" . | nindent 4 }}
+{{- end }}
