@@ -1,0 +1,15 @@
+{{- if .Values.wordpress.enabled }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "wordpress-stack.fullname" . }}-wp-data
+  labels:
+    {{- include "wordpress-stack.wordpressLabels" . | nindent 4 }}
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: {{ .Values.wordpress.storage.className | quote }}
+  resources:
+    requests:
+      storage: {{ .Values.wordpress.storage.size }}
+  {{- end }}

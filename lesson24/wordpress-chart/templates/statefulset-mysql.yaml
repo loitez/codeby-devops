@@ -1,0 +1,60 @@
+{{- if .Values.mysql.enabled }}
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: {{ include "wordpress-stack.fullname" . }}-mysql
+  labels:
+    {{- include "wordpress-stack.mysqlLabels" . | nindent 4 }}
+spec:
+  serviceName: {{ include "wordpress-stack.fullname" . }}-mysql
+  replicas: {{ .Values.mysql.replicas }}
+  selector:
+    matchLabels:
+      {{- include "wordpress-stack.mysqlLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "wordpress-stack.mysqlLabels" . | nindent 8 }}
+    spec:
+      containers:
+        - name: mysql
+          image: "{{ .Values.mysql.image.repository }}:{{ .Values.mysql.image.tag }}"
+          imagePullPolicy: {{ .Values.mysql.image.pullPolicy }}
+          ports:
+            - containerPort: {{ .Values.mysql.service.port }}
+              name: mysql
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "wordpress-stack.fullname" . }}-db-credentials
+                  key: MYSQL_ROOT_PASSWORD
+            - name: MYSQL_DATABASE
+              value: {{ .Values.mysql.credentials.database }}
+            - name: MYSQL_USER
+              value: {{ .Values.mysql.credentials.user }}
+            - name: MYSQL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "wordpress-stack.fullname" . }}-db-credentials
+                  key: MYSQL_PASSWORD
+          resources:
+            requests:
+              cpu: {{ .Values.mysql.resources.requests.cpu }}
+              memory: {{ .Values.mysql.resources.requests.memory }}
+            limits:
+              cpu: {{ .Values.mysql.resources.limits.cpu }}
+              memory: {{ .Values.mysql.resources.limits.memory }}
+          volumeMounts:
+            - name: mysql-data
+              mountPath: /var/lib/mysql
+  volumeClaimTemplates:
+    - metadata:
+        name: mysql-data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        storageClassName: {{ .Values.mysql.storage.className }}
+        resources:
+          requests:
+            storage: {{ .Values.mysql.storage.size }}
+  {{- end }}
