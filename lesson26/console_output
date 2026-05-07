@@ -1,0 +1,106 @@
+Branch indexing
+18:37:37 Connecting to https://api.github.com using loitez/******
+Obtained Jenkinsfile from 1c9eb56279adb96d47754e7d153377b7fbed101f
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on agent1 in /home/loitez/jenkins_agent/workspace/lesson26-smart-build_lesson26
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+The recommended git tool is: NONE
+using credential 1eab9db5-f129-4ad4-9b0b-660fe11c4a00
+Fetching changes from the remote Git repository
+Fetching without tags
+Checking out Revision 1c9eb56279adb96d47754e7d153377b7fbed101f (lesson26)
+Commit message: "change java file"
+ > git rev-parse --resolve-git-dir /home/loitez/jenkins_agent/workspace/lesson26-smart-build_lesson26/.git # timeout=10
+ > git config remote.origin.url https://github.com/loitez/codeby-devops.git # timeout=10
+Fetching upstream changes from https://github.com/loitez/codeby-devops.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+using GIT_ASKPASS to set credentials
+ > git fetch --no-tags --force --progress -- https://github.com/loitez/codeby-devops.git +refs/heads/lesson26:refs/remotes/origin/lesson26 # timeout=10
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1c9eb56279adb96d47754e7d153377b7fbed101f # timeout=10
+ > git rev-list --no-walk ffd723e467623298cd27b57f1ca7b7826122bdd6 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Умная сборка)
+[Pipeline] parallel
+[Pipeline] { (Branch: App World)
+[Pipeline] { (Branch: App Jenkins)
+[Pipeline] { (Branch: App Devops)
+[Pipeline] stage
+[Pipeline] { (App World)
+[Pipeline] stage
+[Pipeline] { (App Jenkins)
+[Pipeline] stage
+[Pipeline] { (App Devops)
+Stage "App Jenkins" skipped due to when conditional
+[Pipeline] }
+Stage "App Devops" skipped due to when conditional
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] }
+[Pipeline] dir
+Running in /home/loitez/jenkins_agent/workspace/lesson26-smart-build_lesson26/app-hello-world
+[Pipeline] {
+[Pipeline] sh
++ mvn clean package
+[[1;34mINFO[m] Scanning for projects...
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--------------------< [0;36mcom.example:app-hello-world[0;1m >---------------------[m
+[[1;34mINFO[m] [1mBuilding app-hello-world 1.0-SNAPSHOT[m
+[[1;34mINFO[m] [1m--------------------------------[ jar ]---------------------------------[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-clean-plugin:2.5:clean[m [1m(default-clean)[m @ [36mapp-hello-world[0;1m ---[m
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:resources[m [1m(default-resources)[m @ [36mapp-hello-world[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/loitez/jenkins_agent/workspace/lesson26-smart-build_lesson26/app-hello-world/src/main/resources
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:compile[m [1m(default-compile)[m @ [36mapp-hello-world[0;1m ---[m
+[[1;34mINFO[m] Changes detected - recompiling the module!
+[[1;34mINFO[m] Compiling 1 source file to /home/loitez/jenkins_agent/workspace/lesson26-smart-build_lesson26/app-hello-world/target/classes
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-resources-plugin:2.6:testResources[m [1m(default-testResources)[m @ [36mapp-hello-world[0;1m ---[m
+[[1;34mINFO[m] Using 'UTF-8' encoding to copy filtered resources.
+[[1;34mINFO[m] skip non existing resourceDirectory /home/loitez/jenkins_agent/workspace/lesson26-smart-build_lesson26/app-hello-world/src/test/resources
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-compiler-plugin:3.1:testCompile[m [1m(default-testCompile)[m @ [36mapp-hello-world[0;1m ---[m
+[[1;34mINFO[m] No sources to compile
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-surefire-plugin:2.12.4:test[m [1m(default-test)[m @ [36mapp-hello-world[0;1m ---[m
+[[1;34mINFO[m] No tests to run.
+[[1;34mINFO[m]
+[[1;34mINFO[m] [1m--- [0;32mmaven-jar-plugin:2.4:jar[m [1m(default-jar)[m @ [36mapp-hello-world[0;1m ---[m
+[[1;34mINFO[m] Building jar: /home/loitez/jenkins_agent/workspace/lesson26-smart-build_lesson26/app-hello-world/target/app-hello-world-1.0-SNAPSHOT.jar
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] [1;32mBUILD SUCCESS[m
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[[1;34mINFO[m] Total time:  2.256 s
+[[1;34mINFO[m] Finished at: 2026-05-07T21:37:44+03:00
+[[1;34mINFO[m] [1m------------------------------------------------------------------------[m
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+
+GitHub has been notified of this commit’s build result
+
+Finished: SUCCESS
